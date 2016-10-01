@@ -1,0 +1,21 @@
+Uso: portsetter [opciones] [argumentos]
+
+opciones:
+    -p, --port establece un puerto para escuchar en, debe ser seguido por un número de puerto válido
+       -e [NOMBRE_VAR] utilizado en conjunto con el puerto para especificar qué variable de entorno para dibujar el número de puerto de
+   -h, --help, -? muestra la interfaz de ayuda
+   -!, --about Muestra un mensaje sobre el desarrollador
+   -v, --version muestra el número de versión de este programa
+
+Ejemplos:
+    portsetter -p -e
+    portsetter -p -e ENVAR_NAME
+    portsetter --port 8080
+    portsetter -p 8080
+    portsetter --help
+    portsetter -h
+   
+Los códigos de salida:
+    0 - Exitosa
+    1 - Error en la entrada del usuario
+    2 - Error interno

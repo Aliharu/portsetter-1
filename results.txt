@@ -1,0 +1,70 @@
+0a1
+> 
+ERROR: ./portsetter help has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -help has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter --h has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -h --help has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -hs has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -p --port 9 has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -p 77 33 has bad output: (see compared outputs directly above)
+
+ERROR: ./portsetter -p -21 returned status: 134 expected status: 1
+ERROR: ./portsetter -p 0 returned status: 134 expected status: 1
+0a1
+> 
+ERROR: ./portsetter --port has bad output: (see compared outputs directly above)
+
+ERROR: ./portsetter -p 90642 returned status: 134 expected status: 1
+0a1
+> 
+ERROR: ./portsetter -x 45321 has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -P 714 has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -version has bad output: (see compared outputs directly above)
+
+0a1
+> 
+ERROR: ./portsetter -about has bad output: (see compared outputs directly above)
+
+1c1,2
+< ERROR: Couldn't retrieve envar value
+---
+> 
+> ERROR: couldn't retrieve port number from enVar
+ERROR: ./portsetter -p -e NOT_AN_ENVAR has bad output: (see compared outputs directly above)
+
+ERROR: export BAD_ENVAR=-234 && ./portsetter -p -e BAD_ENVAR returned status: 134 expected status: 1
+ERROR: export BAD_ENVAR=465465 && ./portsetter -p -e BAD_ENVAR returned status: 134 expected status: 1
+1c1,2
+< ERROR: envar value is not a number
+---
+> 
+> ERROR: The value in enVar isn't a number
+ERROR: export BAD_ENVAR=Hello && ./portsetter -p -e BAD_ENVAR has bad output: (see compared outputs directly above)
+
+
+
+One or more tests failed, see above for details

@@ -1,0 +1,25 @@
+ERROR: Couldn't retrieve envar value
+
+Usage: portsetter [options] [arguments]
+
+Options:
+  -p, --port   	sets a port to listen on, must be followed by a valid port number
+      -e [VAR_NAME]  used in conjuction with port to specify what env variable to draw the portnumber from
+  -h, --help, -?	shows help interface
+  -!, --about     displays a message about the developer
+  -v, --version   displays the version number of this program
+
+Examples:
+
+   portsetter -p -e
+   portsetter -p -e ENVAR_NAME
+   portsetter --port 8080
+   portsetter -p 8080
+   portsetter --help
+   portsetter -h
+   
+Exit codes:
+   0 - Successful
+   1 - Error in user input
+   2 - Internal error
+
