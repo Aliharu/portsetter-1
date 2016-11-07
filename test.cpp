@@ -35,9 +35,12 @@ int main(int argc, char* args[]){
     if(!test(OBJECT_NAME + " --help", 0, "help.txt")) successful = false;
     if(!test(OBJECT_NAME + " -p 1010", 0, "port1010.txt")) successful = false;
     if(!test(OBJECT_NAME + " --port -e", 0, "port8080.txt")) successful = false;
+    if(!test(OBJECT_NAME + " --port -environment", 0, "port8080.txt")) successful = false;
     if(!test("export MY_PORT=4040 && " + OBJECT_NAME + " --port -e MY_PORT", 0, "port4040.txt")) successful = false;
     if(!test(OBJECT_NAME + " -p -e", 0, "port8080.txt")) successful = false;
+    if(!test(OBJECT_NAME + " -p --environment", 0, "port8080.txt")) successful = false;
     if(!test("export MY_PORT=4040 &&" + OBJECT_NAME + " -p -e MY_PORT", 0, "port4040.txt")) successful = false;
+    if(!test("export MY_PORT=4040 &&" + OBJECT_NAME + " -p --environment MY_PORT", 0, "port4040.txt")) successful = false;
     if(!test(OBJECT_NAME + " --about", 0, "about.txt")) successful = false;
     if(!test(OBJECT_NAME + " -!", 0, "about.txt")) successful = false;
     if(!test(OBJECT_NAME + " --version", 0, "version.txt")) successful = false;
@@ -64,6 +67,7 @@ int main(int argc, char* args[]){
     if(!test(OBJECT_NAME + " -version", 1, "badArgs.txt")) successful = false;
     if(!test(OBJECT_NAME + " -about", 1, "badArgs.txt")) successful = false;
     if(!test(OBJECT_NAME + " -p -e NOT_AN_ENVAR", 1, "notAnEnVar.txt")) successful = false;
+     if(!test(OBJECT_NAME + " -p -environment NOT_AN_ENVAR", 1, "notAnEnVar.txt")) successful = false;
     if(!test("export BAD_ENVAR=-234 && " + OBJECT_NAME + " -p -e BAD_ENVAR", 1, "enVarBadPort.txt")) successful = false;
     if(!test("export BAD_ENVAR=465465 && " + OBJECT_NAME + " -p -e BAD_ENVAR", 1, "enVarBadPort.txt")) successful = false;
     if(!test("export BAD_ENVAR=Hello && " + OBJECT_NAME + " -p -e BAD_ENVAR", 1, "enVarNotNumber.txt")) successful = false;

@@ -59,3 +59,6 @@
 >   1 - Error in user input
 >   2 - Internal error
 
+
+# Updates
+>Added The "--environment" functionality as well as the required tests

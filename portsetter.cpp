@@ -131,7 +131,7 @@ int main(int argc, char* args[]){
     if((value == "--port" || value == "-p")){
         if(argc == 3){
             value = args[2];
-            if(value == "-e")
+            if(value == "-e"|| value == "--environment")
             {
                 if(getEnvPort("PORT", port)){
                     connect(port);
@@ -161,7 +161,7 @@ int main(int argc, char* args[]){
         }
         if(argc == 4){
             value = args[2];
-            if(value == "-e"){
+            if(value == "-e" || value == "--environment"){
                 value = args[3];
                 if(getEnvPort(value, port)){
                     connect(port);
